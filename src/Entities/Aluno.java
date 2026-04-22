@@ -16,6 +16,10 @@ public class Aluno {
         this.horasDeExtensaoAcumuladas = horasDeExtensaoAcumuladas;
     }
 
+    public void adicionarHoras(int horas) {
+        this.horasDeExtensaoAcumuladas += horas;
+    }
+
     public String getNome() {
         return nome;
     }
