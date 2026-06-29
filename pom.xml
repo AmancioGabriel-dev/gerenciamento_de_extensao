@@ -44,11 +44,18 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- H2: banco em memoria. Zero instalacao, reseta a cada reinicio. -->
+        <!-- SQLite: banco em ARQUIVO unico (extensao.db). Dados PERSISTEM entre reinicios. -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.53.2.0</version>
+        </dependency>
+
+        <!-- Dialeto SQLite para o Hibernate 6 (modulo "community dialects").
+             A versao e gerenciada pelo parent do Spring Boot. -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-community-dialects</artifactId>
         </dependency>
 
         <!-- Ferramentas de teste do Spring (JUnit, etc.) -->
