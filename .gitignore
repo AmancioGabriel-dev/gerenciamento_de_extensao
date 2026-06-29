@@ -1,3 +1,8 @@
+### Maven / Spring Boot ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.log
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/

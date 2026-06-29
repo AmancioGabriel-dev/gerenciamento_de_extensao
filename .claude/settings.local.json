@@ -2,7 +2,24 @@
   "permissions": {
     "allow": [
       "Bash(dir *)",
-      "Bash(java -cp out Main)"
+      "Bash(java -cp out Main)",
+      "Bash(java -version)",
+      "Bash(javac -version)",
+      "Bash(mvn -version)",
+      "Bash(gradle -version)",
+      "Bash(curl -s -o /dev/null -w \"repo.maven.apache.org -> HTTP %{http_code}\\\\n\" --max-time 15 https://repo.maven.apache.org/maven2/)",
+      "Bash(curl -s -o /dev/null -w \"start.spring.io -> HTTP %{http_code}\\\\n\" --max-time 15 https://start.spring.io)",
+      "Bash(curl -s -o /dev/null -w \"maven central -> HTTP %{http_code}\\\\n\" --max-time 15 https://repo.maven.apache.org/maven2/)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(rm -rf src/Entities src/Model src/Services src/Main.java gerenciamento_de_extensao.iml)",
+      "Bash(mkdir -p \"src/main/java/com/extensao/model\" \"src/main/java/com/extensao/entity\" \"src/main/java/com/extensao/repository\" \"src/main/java/com/extensao/service\" \"src/main/java/com/extensao/controller\" \"src/main/java/com/extensao/dto\" \"src/main/java/com/extensao/config\" \"src/main/resources\")",
+      "Bash(command -v mvn)",
+      "Bash(command -v gradle)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 12 https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.3.5/spring-boot-starter-parent-3.3.5.pom)",
+      "Bash(mkdir -p /tmp/out)",
+      "Bash(javac -d /tmp/out src/main/java/com/extensao/model/*.java)",
+      "Read(//tmp/out/com/extensao/**)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://repo.maven.apache.org/maven2/\" -UseBasicParsing -TimeoutSec 20; \"OK HTTP $\\($r.StatusCode\\) - internet disponivel via PowerShell\" } catch { \"FALHOU: $\\($_.Exception.Message\\)\" })"
     ]
   }
 }
